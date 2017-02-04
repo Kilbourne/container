@@ -14,7 +14,6 @@
 
     },
     "autoload": {
-        "files": ["Tools.php"],
         "psr-4": {
             "Kilbourne\\": ""
         }

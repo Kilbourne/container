@@ -1,8 +1,8 @@
 <?php
-namespace Kilbourne\ContainerTools;
+namespace Kilbourne;
 use Pimple\Container;
-
-function bootProviders($id, Container $container, array $providers = []) {
+class ContainerTools{
+static function bootProviders($id, Container $container, array $providers = []) {
 
     array_walk($providers, function ($class) use ($container) {
         $provider = class_exists($class) ? new $class() : false;
@@ -22,11 +22,12 @@ function bootProviders($id, Container $container, array $providers = []) {
      do_action('pluginname_providers_done', $id);
 }
 
-function getContainer() {
+static function getContainer() {
     static $container = NULL;
     if ( is_null( $container ) ) {
         $container = new Container;
         do_action('pluginname_container_ready', $container);
     }
     return $container;
+}
 }
