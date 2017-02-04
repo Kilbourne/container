@@ -1,6 +1,5 @@
 <?php
-namespace Kilbourne;
-
+namespace Kilbourne\ContainerTools;
 use Pimple\Container;
 
 function bootProviders($id, Container $container, array $providers = []) {
