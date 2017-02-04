@@ -1,4 +1,5 @@
-namespace LC;
+<?php
+namespace Kilbourne;
 
 use Pimple\Container;
 
