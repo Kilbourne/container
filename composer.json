@@ -1,0 +1,26 @@
+{
+    "name": "kilbourne/container",
+    "description": "Bootable Service Container for WordPress",
+    "authors": [{
+        "name": "Luca Castellone",
+        "email": "luca.castellone@gmail.com",
+        "homepage": "https://kilbourne.github.com/resume/",
+        "role": "Developer"
+    }],
+    "license": "GPL-2.0+",
+    "require": {
+        "php": ">=5.4",
+        "pimple/pimple": "~3.0"
+    },
+    "autoload": {
+        "files": ["BootableServiceProvider.php", "Tools.php"],
+        "psr-4": {
+            "Kilbourne\\": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true
+    }
+}
