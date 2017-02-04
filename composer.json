@@ -14,7 +14,7 @@
 
     },
     "autoload": {
-        "files": ["BootableServiceProvider.php", "Tools.php"],
+        "files": ["Tools.php"],
         "psr-4": {
             "Kilbourne\\": ""
         }
