@@ -2,7 +2,7 @@
 namespace Kilbourne;
 use Pimple\Container;
 class ContainerTools{
-static function bootProviders($id, Container $container, array $providers = []) {
+static function bootProviders($pluginname,$id, Container $container, array $providers = []) {
 
     array_walk($providers, function ($class) use ($container) {
         $provider = class_exists($class) ? new $class() : false;
@@ -19,14 +19,14 @@ static function bootProviders($id, Container $container, array $providers = []) 
         $container->dequeue()->boot($container); // boot any bootable provider
      }
 
-     do_action('pluginname_providers_done', $id);
+     do_action($pluginname.'_providers_done', $id);
 }
 
-static function getContainer() {
+static function getContainer($pluginname) {
     static $container = NULL;
     if ( is_null( $container ) ) {
         $container = new Container;
-        do_action('pluginname_container_ready', $container);
+        do_action($pluginname.'_container_ready', $container);
     }
     return $container;
 }
